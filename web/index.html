@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid" style="width: 20vw; margin-top: 10vh">
+            <h1>
+                AuthorLink
+            </h1>
+            <br>
+            <a href="./jsp/registrarLibro.jsp" class="btn btn-lg" style="background: transparent; border-color: green; color: green; display: block">Registrar libro</a>
+            <br>
+            <a href="./libro_servlet" class="btn btn-lg" style="background: transparent; border-color: green; color: green; display: block">Ver Libros</a>
+            <br>
+            <a href="./jsp/registrarAutor.jsp" class="btn btn-lg" style="background: transparent; border-color: green; color: green; display: block">Registrar Autor</a>
+            <br>
+            <a href="./autor_servlet" class="btn btn-lg" style="background: transparent; border-color: green; color: green; display: block">Ver Autores</a>
+            <br>
+            <a href="./jsp/asignarAutorLibro.jsp" class="btn btn-lg" style="background: transparent; border-color: green; color: green; display: block">Asignar Autor a Libro</a>
+            <br>
+            <a href="./autor_libro_Servlet" class="btn btn-lg" style="background: transparent; border-color: green; color: green; display: block">Ver Libros y Autores</a>
+        </div>
+    </body>
+</html>
+<!-- 
+            
+        -- Tabla Libro
+        CREATE TABLE Libro (
+            idLibro INT AUTO_INCREMENT PRIMARY KEY,
+            titulo VARCHAR(100),
+            fecha_publicacion DATE,
+            precio DECIMAL(10, 2),
+            disponible BOOLEAN
+        );
+
+        -- Tabla Autor
+        CREATE TABLE Autor (
+            idAutor INT AUTO_INCREMENT PRIMARY KEY,
+            nombre VARCHAR(100),
+            nacionalidad VARCHAR(50),
+            fecha_nacimiento DATE
+        );
+
+        -- Tabla intermedia para la relación N a N (LibroAutor)
+        CREATE TABLE LibroAutor (
+            idLibro INT,
+            idAutor INT,
+            rol VARCHAR(50),
+            PRIMARY KEY (idLibro, idAutor),
+            FOREIGN KEY (idLibro) REFERENCES Libro(idLibro),
+            FOREIGN KEY (idAutor) REFERENCES Autor(idAutor)
+        );
+
+        -->
